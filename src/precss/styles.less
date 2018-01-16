@@ -1,0 +1,668 @@
+﻿@import "reset.less";
+
+@color_base: #9a9a9a;
+@color_green_base: #1d9d73;
+@color_green_light_base: #1fa87a;
+@color_green_dark_base: #1b936c;
+@color_back_grey: #f1f1f1;
+@color_dark_grey: #5b5b5b;
+
+@offset: 30px;
+@offsetOneSide: @offset / 2;
+
+.sizeHList(@cnt, @offs) {
+    width: ~"calc(100% / @{cnt} - @{offs})";
+}
+
+.hListItem(@cnt, @offs, @color) {
+    display: inline-block;
+    margin: 20px @offs / 2;
+    .sizeHList(@cnt, @offs);
+    font-size: 12px;
+    vertical-align: top;
+    color: @color;
+}
+
+.hListItemColor(@cnt, @offs, @color) {
+    .hListItem(@cnt, @offs, @color);
+    text-align: center;
+    padding: 5%;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.circleBack(@whSize, @bcolor) {
+    background-color: @bcolor;
+    border-radius: 50%;
+    width: @whSize;
+    height: @whSize;
+    margin: 0 auto;
+}
+
+.price(@color) {
+    background-color: @color;
+    color: white;
+    font-size: 2em;
+    padding: 10px 0;
+}
+
+body {
+    margin: 0;
+    color: @color_base;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    line-height: 1.6em;
+    font-weight: 100;
+    min-width: 265px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+footer div {
+    margin: 20px auto;
+}
+
+h1, .h1 {
+    font-size: 3em;
+    line-height: normal;
+    margin: 0.67em 0;
+}
+
+
+h2, .h2 {
+    font-size: 2em;
+    line-height: normal;
+    margin: 0.83em 0;
+    color: black;
+}
+
+h3, .h3 {
+    font-size: 1.5em;
+    line-height: normal;
+    margin: 1em 0;
+}
+
+h4, .h4 {
+    margin: 1.33em 0;
+    line-height: normal;
+}
+
+.sliderTopContent .h1 span {
+    font-size: 1.25em;
+
+}
+
+.hListPict p {
+  margin-bottom: @offset;
+}
+
+.header, .sliderTop, .hListPict, .hListPict2, .hList, 
+.discover, .hListWeb, .sliderBottom, .packagesPrice, .sliderStuff {
+
+    padding: 0.1px 0;
+}
+.wrapper {
+    margin: @offset auto;
+}
+
+.wrapperOut {
+    max-width: 2048px;
+}
+
+.wrapperIn {
+    max-width: 1024px;
+    margin: @offset auto;
+  padding: 0 @offsetOneSide;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.fa-search {
+    color: @color_green_base;
+}
+
+.headerRight {
+    float: right;
+}
+
+.menuMain {
+    display: inline-block;
+    margin: 6px 0;
+    position: relative;
+}
+
+.menuMain .list > li:hover > a {
+    color: @color_green_base;
+}
+
+.logo, .menuMain li {
+    display: inline-block;
+}
+
+.menuMain .list > li {
+    margin-right: 20px;
+}
+#checkMenu {
+    display: none;
+}
+.withSubmenu {
+    position: relative;
+}
+.withSubmenu:hover label {
+    color: @color_green_base;
+}
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 130px;
+    background-color: rgba(255, 255, 255, 0.73);
+    border-radius: 5px;
+}
+.submenu li {
+    color: #fff;
+    background: @color_green_base;
+    border-radius: 5px;
+    display: list-item;
+    margin-top: 3px;
+    width: 100%;
+    box-shadow: inset 0 0 1px 1px;
+}
+
+.submenu a {
+    padding: 4px 5px;
+    display: block;
+}
+.submenu li:hover a {
+    color: @color_green_base;
+    background-color: #fff;
+}
+#checkSubmenu1, #checkSubmenu3, .submenu1, .submenu3 {
+    display: none;
+}
+#checkSubmenu1:checked + .submenu1, #checkSubmenu3:checked + .submenu3 {
+  display: block;
+}
+
+.menuBtn {
+    display: none;
+    cursor: pointer;
+    border: 1px solid @color_green_base;
+    border-radius: 5px;
+    color: @color_green_base;
+    width: 36px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: inset 0 0 11px 2px;
+    margin-right: 15px;
+}
+.menuBtn:active {
+    box-shadow: 1px 1px 2px 2px #888 inset;
+}
+.searchBox {
+    display: inline-block;
+    position: relative;
+}
+.fa-search {
+    cursor: pointer;
+}
+.searchInputTxt {
+    position: absolute;
+    top: 130%;
+    right: 0;
+  border-radius: 12px;
+    display: none;
+  padding: 4px 5px;
+}
+
+#checkSearch {
+    display: none;
+}
+
+#checkSearch:checked + .searchInputTxt {
+    display: block;
+}
+#checkMenu:checked + .list{
+    display: block;
+}
+.menuVColor {
+    margin: @offset 0;
+}
+
+.menuVColor img {
+    margin: 12px 0;
+}
+
+.menuVColor a {
+    padding-left: 25px;
+}
+
+.sliderBackgr {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sliderTop {
+    background-image: url("../img/slider-top1.png");
+    color: white;
+}
+
+.sliderBottom .hListItems {
+    padding: 15% 0;
+}
+
+.sliderBottom {
+    background-image: url("../img/slider-bottom1.png");
+    color: @color_green_base;
+}
+
+.sliderTopContent {
+    text-align: center;
+    padding: 15% 0;
+}
+
+.buttons {
+  margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    min-width: 110px;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: @color_green_base;
+    border-color: @color_green_base;
+}
+
+.btnColor {
+  color: white;
+  background-color: @color_green_base;
+  border-color: @color_green_base;
+}
+
+.btnColor:hover {
+  color: @color_green_base;
+  background-color: white;
+}
+
+.hListPict, .hListPict2, .packagesPrice, .sliderStuff, footer {
+    text-align: center;
+}
+
+.hList, .sliderStuff, .menuVColor li:hover {
+    background-color: @color_back_grey;
+}
+
+.hListItems {
+    font-size: 0;
+    margin: 0 -@offsetOneSide;
+}
+
+.hListItem {
+    .hListItem(3, @offset, inherit);
+}
+
+.hListItemTransp {
+    .hListItem(4, @offset, inherit);
+    text-align: center;
+    font-size: 16px;
+}
+
+.hListItemsColor {
+    font-size: 0;
+}
+
+.hListItemColor1 {
+    .hListItemColor(3, 0px, #fff);
+    background-color: @color_green_light_base; 
+}
+
+.hListItemColor2 {
+    .hListItemColor(3, 0px, #fff);
+    background-color: @color_green_base;
+}
+
+.hListItemColor3 {
+    .hListItemColor(3, 0px, #fff);
+    background-color: @color_green_dark_base;
+}
+
+.hListPict .h3 {
+  color: @color_green_base;
+}
+
+.hListPict2 .h3, .hList .h3, .sliderStuff .h3 {
+  color: @color_dark_grey;
+}
+
+.hListItem:hover .itemImg {
+  transform: scaleX(0.95) scaleY(0.92);
+}
+
+.pictFloat {
+    float: left;
+  width: 45%;
+  max-width: 100%;
+}
+
+.pictFloatItem {
+    width: 25%;
+    text-align: center;
+}
+
+.itemFloat {
+    overflow: hidden;
+    padding-left: 10%;
+}
+
+.hListItemContent {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.itemImgBack {
+    background-color: @color_green_base;
+}
+
+.itemImg {
+    display: block;
+    transition: transform 1s;
+}
+.itemLinks {
+  margin: 8px 0;
+}
+
+.itemLink {
+    color: @color_green_base;
+    font-size: 13px;
+}
+
+.itemLinkGroup {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+ .fa {
+    margin: 0 5px;
+ }
+
+.circleBack1 {
+    .circleBack(50px, @color_back_grey);
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.circleBack2 {
+    .circleBack(115px, @color_green_base);
+}
+
+.circleBack2 img {
+    margin: 30% auto;
+}
+
+.price1 {
+    .price(@color_green_light_base);
+}
+
+.price2 {
+    .price(@color_green_base);
+}
+
+.price3 {
+    .price(@color_green_dark_base);
+}
+
+.priceNumber {
+    padding: 0 3px;
+}
+
+.priceNumber:before {
+    content: "$";
+    font-size: .55em;
+    vertical-align: text-top;
+}
+
+.priceNumber:after {
+    content: "/month";
+    font-size: .35em;
+}
+
+.hListItemPrice {
+    .hListItem(3, @offset, inherit);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.listProp {
+    display: inherit;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.listProp li {
+    line-height: 2.3em;
+}
+
+.listProp .fa-check {
+    color: @color_green_base;
+}
+
+.listProp .fa-close {
+    color: @color_base;
+}
+
+.itemPriceText {
+    padding-left: 10px;
+}
+
+.stuffName {
+    margin-bottom: 5px;
+}
+
+.workPosition {
+    color: @color_green_base;
+    font-size: 1.2em;
+}
+
+.phone {
+    vertical-align: middle;
+}
+
+.phoneImg {
+    margin-right: 10px;
+}
+.phoneNumber, .phoneImg {
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.netSocLinks {
+    font-size: medium;
+    color: @color_base;
+}
+
+.netSocLinks .fa:hover {
+    color: @color_green_base;
+}
+
+footer .logoIcon {
+    width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 700px) {
+    .menuMain .list {
+        width: 90px;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: rgba(255, 255, 255, 0.73);
+    }
+    .menuMain > .list > li {
+        color: #fff;
+        background: @color_green_base;
+        border-radius: 5px;
+        display: list-item;
+        margin-top: 3px;
+        width: 100%;
+        box-shadow: inset 0 0 1px 1px;
+    }
+    .menuMain > .list > li:hover > a, .withSubmenu:hover > label {
+        background-color: #fff;
+    }
+    .menuMain a {
+        padding: 4px 5px;
+        display: block;
+    }
+    .withSubmenu > label {
+        padding: 4px 5px;
+        display: block;
+    }
+    .menuBtn {
+      display: inline-block;
+      padding: 3px 0;
+    }
+    .submenu {
+        position: absolute;
+        right: 100%;
+        left: auto;
+        top: 0;
+    }
+    .hList .hListItem {
+        .sizeHList(2, @offset);
+    }
+    .discover .pictFloat {
+        float: none;
+        min-width: 250px;
+    }
+    .discover {
+        text-align: center;
+    }
+    .discover .list {
+        text-align: left;
+        display: inline-block;
+    }
+    .itemFloat {
+        padding: 0;
+    }
+    header .fa-angle-down {
+        transform: rotate(-90deg);
+  }
+}
+
+@media screen and (max-width: 680px) {
+    .hListItemPrice {
+        .sizeHList(2, @offset);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hListItems {
+        margin: 0;
+    }
+    .hListPict .hListItem, .hListPict2 .hListItem {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .itemImgBack {
+        margin: 0 17%;
+    }
+    .hListItemColor1 {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .hListItemColor2 {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .hListItemColor3 {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .hListItemTransp {
+        .sizeHList(2, @offset);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hList .hListItem {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .hListItemPrice {
+        .sizeHList(1, @offset);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hListItemTransp {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+        .sliderBottom .hListItems {
+        padding: 10% 0;
+    }
+    .itemImgBack {
+        margin: 0;
+    }
+    .phoneImg {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .headerRight {
+        float: none;
+    }
+    .searchInputTxt {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .menuBtn {
+        margin-right: 7px;
+    }
+    .submenu {
+        position: absolute;
+        left: 100%;
+        right: auto;
+    }
+}
